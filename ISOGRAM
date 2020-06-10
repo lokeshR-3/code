@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char a[1000],t;
+    scanf("%s",&a);
+    int i,j,k,f=0,n=strlen(a);
+    
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(tolower(a[i])>tolower(a[j]))
+            {
+                t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+    for(k=0;k<n;k++)
+    {
+        if(tolower(a[i])==tolower(a[i+1]))
+        {
+            f=1;
+            break;
+        }
+    }
+    if(f==0)
+    printf("Yes");
+    else
+    printf("No");
+    
+}
