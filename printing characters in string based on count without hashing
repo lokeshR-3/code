@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int i,j=0,k,l,n,c=0,s=0,d[100],p,o;
+char a[1000],b[1000],t;
+scanf("%s",a);
+for(i=0;a[i]!='\0';i++)
+{
+    c=c+1;
+    if(a[i]!=a[i+1])
+    {
+       b[j]=a[i];
+       d[j]=c;
+       j++;
+       c=0;
+    }
+}
+for(k=0;k<j-1;k++)
+{
+    for(l=k+1;l<j;l++)
+    {
+        if(d[k]<d[l])
+        {
+        t=b[k];
+        b[k]=b[l];
+        b[l]=t;
+        o=d[k];
+        d[k]=d[l];
+        d[l]=o;
+        }
+        else if(d[k]==d[l]&&b[k]>b[l])
+        {
+           
+               o=b[k];
+               b[k]=b[l];
+               b[l]=o;
+          
+        }
+    }
+}
+for(p=0;p<j;p++)
+{
+    while(d[p]--)
+  printf("%c",b[p]);
+}
+
+}
