@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+int main()
+{
+    char a[400],char1count[26];
+    int n,c,p;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<26;j++)
+        {
+            char1count[j]=0;
+        }
+        scanf("%s",&a);
+        for(int j=0;j<strlen(a);j++)
+        {
+            p=(int)a[j]-97;
+            char1count[p]++;
+        }
+        for(int k=0;k<26;k++)
+        {
+            if(char1count[k]==k+1||char1count[k]==0)
+            {
+                c=1;
+            }
+            else
+            {
+                c=0;
+                break;
+            }
+        }
+        if(c!=0)
+        printf("Yes\n");
+        else
+        printf("No\n");
+    }
+    return 0;
+}
