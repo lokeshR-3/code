@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,k,res=0,diff=0,a[1000],b[1000],t;
+    scanf("%d %d",&n,&k);
+    for(int i=0;i<n;i++)
+    {
+    scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+    scanf("%d",&b[i]);
+    }
+    
+    for(int i=0;i<n;i++)
+    {
+        int pro=a[i]*b[i];
+        res=res+pro;
+        if(pro<0 && b[i]<0)
+        t=(a[i]+2*k)*b[i];
+        else if(pro<0 && a[i]<0)
+        t=(a[i]-2*k)*b[i];
+        else if(pro>0 && a[i]<0)
+        t=(a[i]+2*k)*b[i];
+        else if(pro>0 && a[i]>0)
+        t=(a[i]-2*k)*b[i];
+        
+        int d=abs(pro-t);
+        if(d>diff)
+        {
+            diff=d;
+        }
+    }
+    printf("%d",res-diff);
+}
