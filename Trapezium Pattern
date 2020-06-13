@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+    int p=1,n;
+    scanf("%d",&n);
+    int s=n*n+1;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<i;j++)
+        {
+           printf("   "); 
+        }
+        for(int k=0;k<n-i;k++)
+        {
+            printf("%02d ",p);
+            p=p+1;
+        }
+        for(int l=0;l<n-i;l++)
+        {
+           printf("%02d ",s);
+           s=s+1;
+        }
+        s=s-(n+2-i*2+1);
+        printf("\n");
+    }
+}
