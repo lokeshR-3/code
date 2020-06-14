@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long long int n,sq,s=0,sum=0;
+    scanf("%lld",&n);
+    sq=n*n;
+    while(sq>0)
+    {
+        s=s+sq%10;
+        sq=sq/10;
+    }
+    while(n>0)
+    {
+        if(n%10!=0)
+        sum=sum*10+n%10;
+        n=n/10;
+    }
+    
+    if(s==sum)
+    {
+        printf("Yes");
+    }
+    else
+    printf("No");
+    
+    return 0;
+}
